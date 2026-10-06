@@ -1,0 +1,105 @@
+html {
+  font-size: 14px;
+}
+
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+.btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
+  box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
+}
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+  margin-bottom: 60px;
+}
+/* Station pages follow the existing Battery Transfer Management styles. */
+.station-page .station-card {
+  border-radius: 0.75rem;
+  overflow: hidden;
+}
+
+.station-page .station-table {
+  min-width: 800px;
+}
+
+.station-page .station-table th,
+.station-page .station-table td {
+  padding: 1rem;
+}
+
+.station-page .station-table thead th {
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.station-page .station-table .btn-group {
+  white-space: nowrap;
+}
+
+.station-page .station-address {
+  min-width: 180px;
+  max-width: 320px;
+  white-space: pre-line;
+  overflow-wrap: anywhere;
+}
+
+.station-page .station-name {
+  display: inline-block;
+  min-width: 130px;
+  overflow-wrap: anywhere;
+}
+
+.station-page .station-name:hover {
+  text-decoration: underline !important;
+}
+
+.station-page .station-status {
+  padding: 0.5rem 0.75rem;
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+
+.station-form-page {
+  max-width: 860px;
+  margin-inline: auto;
+}
+
+.station-page .form-control,
+.station-page .form-select {
+  padding: 0.65rem 0.85rem;
+}
+
+.station-page .station-summary dt {
+  color: #6c757d;
+  font-weight: 500;
+}
+
+.station-page .station-summary dd {
+  margin-bottom: 1.25rem;
+}
+
+.station-page .station-summary .station-address {
+  max-width: none;
+}
+
+@media (max-width: 575.98px) {
+  .station-page {
+    padding-inline: 0;
+  }
+
+  .station-page .station-card > .card-body:not(.p-0) {
+    padding: 1.25rem !important;
+  }
+
+  .station-page .station-summary dt {
+    margin-bottom: 0.25rem;
+  }
+}

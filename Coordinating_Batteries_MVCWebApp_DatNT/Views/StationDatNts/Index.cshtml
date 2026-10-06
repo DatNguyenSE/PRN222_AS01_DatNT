@@ -1,0 +1,69 @@
+@model IEnumerable<Coordinating_Batteries_Entities_DatNT.Models.StationDatNt>
+
+@{
+    ViewData["Title"] = "Stations";
+}
+
+<div class="container-fluid py-4 station-page">
+    <div class="d-flex flex-wrap justify-content-between align-items-center gap-3 mb-4">
+        <div>
+            <h2 class="text-primary fw-bold mb-1">Station Management</h2>
+            <p class="text-muted mb-0">Manage station locations, capacity and operating status.</p>
+        </div>
+        <a asp-action="Create" class="btn btn-success shadow-sm">
+            <span aria-hidden="true">+</span> Create New
+        </a>
+    </div>
+
+    <div class="card shadow-sm border-0 station-card">
+        <div class="card-body p-0">
+            <div class="table-responsive">
+                <table class="table table-hover table-striped table-bordered mb-0 align-middle station-table">
+                    <caption class="visually-hidden">Stations and their operating status</caption>
+                    <thead class="table-dark">
+                        <tr>
+                            <th scope="col">Station name</th>
+                            <th scope="col">Address</th>
+                            <th scope="col" class="text-center">Capacity</th>
+                            <th scope="col" class="text-center">Status</th>
+                            <th scope="col">Publish date</th>
+                            <th scope="col" class="text-center">Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in Model)
+                        {
+                            <tr>
+                                <th scope="row">
+                                    <a asp-action="Details" asp-route-id="@item.StationDatNtid" class="text-primary fw-bold text-decoration-none station-name">@item.StationName</a>
+                                </th>
+                                <td class="station-address">@item.Address</td>
+                                <td class="text-center">@(item.Capacity?.ToString("N0") ?? "—")</td>
+                                <td class="text-center">
+                                    <partial name="_StationStatus" model="item.Status" />
+                                </td>
+                                <td class="text-nowrap">@(item.PublishDate?.ToString("dd/MM/yyyy HH:mm") ?? "—")</td>
+                                <td class="text-center">
+                                    <div class="btn-group btn-group-sm" role="group" aria-label="Actions for @item.StationName">
+                                        <a asp-action="Edit" asp-route-id="@item.StationDatNtid" class="btn btn-outline-primary">Edit</a>
+                                        <a asp-action="Details" asp-route-id="@item.StationDatNtid" class="btn btn-outline-info">Details</a>
+                                        <a asp-action="Delete" asp-route-id="@item.StationDatNtid" class="btn btn-outline-danger">Delete</a>
+                                    </div>
+                                </td>
+                            </tr>
+                        }
+                        @if (!Model.Any())
+                        {
+                            <tr>
+                                <td colspan="6" class="text-center py-5">
+                                    <p class="fw-bold mb-1">No stations yet</p>
+                                    <p class="text-muted mb-0">Select Create New to add your first station.</p>
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>

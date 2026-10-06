@@ -1,0 +1,13 @@
+@model int
+
+@{
+    var (label, color) = Model switch
+    {
+        0 => ("Inactive", "bg-secondary"),
+        1 => ("Active", "bg-success"),
+        2 => ("Maintenance", "bg-warning text-dark"),
+        _ => ($"Unknown ({Model})", "bg-secondary")
+    };
+}
+
+<span class="badge rounded-pill @color station-status">@label</span>

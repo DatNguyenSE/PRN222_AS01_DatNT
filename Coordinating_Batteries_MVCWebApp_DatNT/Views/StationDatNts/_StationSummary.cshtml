@@ -1,0 +1,18 @@
+@model Coordinating_Batteries_Entities_DatNT.Models.StationDatNt
+
+<dl class="row mb-0 station-summary">
+    <dt class="col-sm-4">Station name</dt>
+    <dd class="col-sm-8 fw-bold text-primary">@Model.StationName</dd>
+
+    <dt class="col-sm-4">Address</dt>
+    <dd class="col-sm-8 station-address">@Model.Address</dd>
+
+    <dt class="col-sm-4">Capacity</dt>
+    <dd class="col-sm-8">@(Model.Capacity?.ToString("N0") ?? "—")</dd>
+
+    <dt class="col-sm-4">Status</dt>
+    <dd class="col-sm-8"><partial name="_StationStatus" model="Model.Status" /></dd>
+
+    <dt class="col-sm-4">Publish date</dt>
+    <dd class="col-sm-8">@(Model.PublishDate?.ToString("dd/MM/yyyy HH:mm") ?? "—")</dd>
+</dl>

@@ -1,0 +1,28 @@
+@model Coordinating_Batteries_Entities_DatNT.Models.StationDatNt
+
+@{
+    ViewData["Title"] = "Create Station";
+}
+
+<div class="container-fluid py-4 station-page station-form-page">
+    <a asp-action="Index" class="d-inline-block text-decoration-none mb-3">&larr; Back to Stations</a>
+    <h2 class="text-primary fw-bold mb-1">Create Station</h2>
+    <p class="text-muted mb-4">Add a station and set its operating details.</p>
+
+    <div class="card shadow-sm border-0 station-card">
+        <div class="card-body p-4">
+            <form asp-action="Create" method="post">
+                <partial name="_StationFields" model="Model" />
+
+                <div class="d-flex flex-wrap gap-2 border-top pt-4 mt-4">
+                    <button type="submit" class="btn btn-success">Create Station</button>
+                    <a asp-action="Index" class="btn btn-outline-secondary">Cancel</a>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

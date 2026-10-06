@@ -1,0 +1,6 @@
+<Solution>
+  <Project Path="Coordinating_Batteries_Entities_DatNT/Coordinating_Batteries_Entities_DatNT.csproj" />
+  <Project Path="Coordinating_Batteries_MVCWebApp_DatNT/Coordinating_Batteries_MVCWebApp_DatNT.csproj" Id="f0c94e69-c846-4997-9218-e135f1bc7727" />
+  <Project Path="Coordinating_Batteries_Repositories_DatNT/Coordinating_Batteries_Repositories_DatNT.csproj" />
+  <Project Path="Coordinating_Batteries_Services_DatNT/Coordinating_Batteries_Services_DatNT.csproj" />
+</Solution>
